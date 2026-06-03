@@ -20,6 +20,16 @@ const userSchema = new mongoose.Schema(
       trim: true,
       index: true,
     },
+    avatarUrl: {
+      type: String,
+      required: false,
+      default: null,
+    },
+    avatarPublicId: {
+      type: String,
+      required: false,
+      default: null,
+    },
     password: {
       type: String,
       required: true,
