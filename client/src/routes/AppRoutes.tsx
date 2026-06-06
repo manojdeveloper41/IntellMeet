@@ -6,6 +6,8 @@ import Dashboard from "@/pages/Dashboard";
 import Meetings from "@/pages/Meetings";
 import CreateMeeting from "@/pages/CreateMeeting";
 import Settings from "@/pages/Settings";
+import ProtectedRoute from "./ProtectedRoute";
+import Profile from "@/pages/Profile";
 
 
 
@@ -19,14 +21,19 @@ export default function AppRoutes() {
 
         <Route path="/signup" element={<SignupPage />} />
 
-        <Route path="/dashboard" element={<Dashboard />} />
+      
         <Route path="/meetings"  element={<Meetings />} />
         <Route path="/create-meeting" element={<CreateMeeting />} />
         <Route path="/settings" element={<Settings />} />
+        <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>}
+/>
+<Route path="/profile" element={ <ProtectedRoute> <Profile />  </ProtectedRoute> }
+/>
        
         
        
       </Routes>
     </BrowserRouter>
+    
   );
 }
